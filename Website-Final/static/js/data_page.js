@@ -108,11 +108,3 @@ function filterData(data, startYear, endYear) {
 
   return filteredData;
 } // end function filterData()
-
-
-
-
-
-
-
-

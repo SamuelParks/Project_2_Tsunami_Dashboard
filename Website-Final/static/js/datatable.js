@@ -1,3 +1,6 @@
+// --------------------------------------------------------------------------------
+// Function json2table() will convert an input json object into an HTML table
+// --------------------------------------------------------------------------------
 function json2table(json, classes) {
   var cols = ["Year",
               "Mo",

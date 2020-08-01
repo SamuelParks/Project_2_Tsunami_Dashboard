@@ -1,3 +1,7 @@
+// --------------------------------------------------------------------------------
+// Function getTsunamiStatus() calls our Flask server and adds the return message
+// to the main page
+// --------------------------------------------------------------------------------
 function getTsunamiStatus() {
   // tsunami status banner text strings
   var tsunamiStatusText = "";
@@ -14,13 +18,7 @@ function getTsunamiStatus() {
     // Display tsunami status
     document.getElementById("tsunamistatus").innerHTML =  `<b>Status message:</b> ${tsunamiStatusText}<br>` +
                                                           `<b>Message timestamp:</b> ${tsunamiStatusTimestamp}`
-
-   
-
   })
   .catch(error=>console.log(error));
 
-
-
-
-}
+} // end getTsunamiStatus()
