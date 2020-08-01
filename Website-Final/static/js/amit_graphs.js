@@ -76,18 +76,21 @@ function graphTsunamisByYear(data) {
 } // end function graphTsunamisByYear()
 
 
-
+// Graph the number of tsunamis by month using a histogram
 function graphTsunamisByMonth(data) {
+
+  // Define an array to hold the month values of our dataset
+  // Plotly will create a histogram from this array
   var monthArray = [];
 
   data.forEach(function(d) {
     if(d["Maximum Water Height (m)"] > 0) {
+      // Only add to our array if the max water height > 0
       monthArray.push(d["Mo"]);
     } // end if
-
   }); // end forEach()
 
-
+  // Define the trace, data, and layout
   var trace = {
     x: monthArray,
     type: 'histogram',
@@ -104,6 +107,7 @@ function graphTsunamisByMonth(data) {
     yaxis: {title: 'Number of Tsunamis'} 
   };
 
+  // Create the plot
   Plotly.newPlot('graphMonthHistogram', plotdata, layout);
 
 } // end graphTsunamisByMonth()
