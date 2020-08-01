@@ -65,28 +65,31 @@ fetch(get_tsunami_data_URL)
     filteredData20Years = filterData(data, 2000, 2020);
     filteredData5Years = filterData(data, 2016, 2020);
 
-    // Get fun facts
+    // Get fun facts based on the 20 year dataset
     funFacts(filteredData20Years);
 
-    // Display the Leaflet map
+    // Display the Leaflet map on the home page based on the 5 year dataset
     mapFunction(filteredData5Years);
 
-    // Display Amit's graphs
+    // Display Amit's graphs based on the 20 year dataset
     graphTsunamisByYear(filteredData20Years);
     graphTsunamisByMonth(filteredData20Years);
     graphTsunamisByCountry(filteredData20Years);
 
-    // Display Daniah's graphs
+    // Display Daniah's graphs based on the 20 year dataset
     graphTsunamiCauseCodesByMonth(filteredData20Years);
     
-    // Display Extra scatterplot graphs
+    // Display Extra scatterplot graphs based on the 20 year dataset
     scatterMagnitudeVsHeight(filteredData20Years);
     scatterHeightvsDistance(filteredData20Years);
     scatterMagnitudevsDistance(filteredData20Years);
 
-    // Get tsunami status
+    // Get tsunami status by calling our Flask server
     getTsunamiStatus();
     
+    // If the Update Status button is clicked, update the 
+    // tsunami status by calling our Flask server, which will
+    // perform web scraping
     $('#updateStatusButton').on('click', function(event) {
       event.preventDefault();
       updateTsunamiStatus();
