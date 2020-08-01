@@ -1,6 +1,5 @@
 # Tsunami Dashboard
-Created by: `Roopa Patel, Steven Lee, Amit Patel, Samuel Parks, and Daniah Al Bayati`
-
+**NOTE: A Mapbox API key is required in the config.js file**
 
 ## Introduction
 We are interested in developing a dashboard to visualize tsunami data for events that occurred during different periods of time. We chose tsunamis because most natural disaster dashboards focus on earthquakes. While tsunamis are usually caused by earthquakes, we thought it would be interesting to look at data that is tsunami-specific. 
