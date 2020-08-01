@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------
+// Function mapFunction() generated the Leaflet map baed on an
+// input dataset
+// ------------------------------------------------------------------
 function mapFunction(inputData) {
 
     // Magnitude color scheme
@@ -12,7 +16,9 @@ function mapFunction(inputData) {
     var extremeRed = "#fc0032";
     var historicallyExtremeRed = "#a60d2e";
 
-    //This function returns the applicable color based on the magnitude
+    // ------------------------------------------------------------------
+    // This function returns the applicable color based on the magnitude
+    // ------------------------------------------------------------------
     function circleColor(magnitude) {
         var colorForCircle = "";
 
@@ -48,10 +54,12 @@ function mapFunction(inputData) {
         }
 
         return colorForCircle;
-    }
+    } // end circleColor()
 
 
-    //This function returns the description of the size based on the magnitude
+    // -------------------------------------------------------------------------
+    // This function returns the description of the size based on the magnitude
+    // -------------------------------------------------------------------------
     function circleCategory(magnitude) {
         var categoryForCircle = "";
 
@@ -87,10 +95,12 @@ function mapFunction(inputData) {
         }
 
         return categoryForCircle;
-    }
+    } // end circleCategory()
 
+    // -------------------------------------------------------------------------
     // Using a proportional instead of pre-set values below
-    //This function returns the applicable size based on the magnitude
+    // This function returns the applicable size based on the magnitude
+    // -------------------------------------------------------------------------
     function circleSize(magnitude) {
         if (magnitude > 0) {
             return (50000 * magnitude);
@@ -98,48 +108,12 @@ function mapFunction(inputData) {
         else {
             return 0;
         }
-    }
+    } // end circleSize()
 
-    //    //Not using non-proportional, pre-set function
-    // //This function returns the applicable size based on the magnitude
-    // function circleSizePreSet(magnitude) {
-    //     var circleRadius = 0;
 
-    //     if (magnitude < 2) {
-    //         circleRadius = 35000;
-    //     }
-    //     else if ((magnitude >= 2) && (magnitude < 3)) {
-    //         circleRadius = 75000;
-    //     }
-    //     else if ((magnitude >= 3) && (magnitude < 4)) {
-    //         circleRadius = 150000;
-    //     }
-    //     else if ((magnitude >= 4) && (magnitude < 5)) {
-    //         circleRadius = 300000;
-    //     }
-    //     else if ((magnitude >= 5) && (magnitude < 6)) {
-    //         circleRadius = 450000;
-    //     }
-    //     else if ((magnitude >= 6) && (magnitude < 7)) {
-    //         circleRadius = 600000;
-    //     }
-    //     else if ((magnitude >= 7) && (magnitude < 8)) {
-    //         circleRadius = 750000;
-    //     }
-    //     else if ((magnitude >= 8) && (magnitude < 9)) {
-    //         circleRadius = 900000;
-    //     }
-    //     else if ((magnitude >= 9) && (magnitude < 10)) {
-    //         circleRadius = 1050000;
-    //     }
-    //     else if (magnitude >= 10) {
-    //         circleRadius = 1100000;
-    //     }
-
-    //     return circleRadius;
-    // }
-
-    //This function returns the applicable opacity based on the magnitude
+    // -------------------------------------------------------------------------
+    // This function returns the applicable opacity based on the magnitude
+    // -------------------------------------------------------------------------
     function circleOpacityLevel(magnitude) {
         var circleOpacity = "";
 
@@ -175,10 +149,12 @@ function mapFunction(inputData) {
         }
 
         return circleOpacity;
-    }
+    } // end circleOpacityLevel()
 
 
-    //This function returns the applicable tsunami cause description based on the code
+    // ---------------------------------------------------------------------------------
+    // This function returns the applicable tsunami cause description based on the code
+    // ---------------------------------------------------------------------------------
     function tsunamiCauseDescription(causeCode) {
         var tsunamiCauseDescription = "";
 
@@ -222,11 +198,12 @@ function mapFunction(inputData) {
             tsunamiCauseDescription = "Unspecified";
         }
         return tsunamiCauseDescription;
-    }
+    } // end tsunamiCauseDescription()
 
 
-    
-    //This function returns the applicable tsunami cause description based on the code
+    // ---------------------------------------------------------------------------------
+    //  This function returns the applicable tsunami cause description based on the code
+    // ---------------------------------------------------------------------------------
     function WaveCircleColor(causeCode) {
         var WaveCircleColor = "";
 
@@ -270,10 +247,12 @@ function mapFunction(inputData) {
             WaveCircleColor = "#000000";
         }
         return WaveCircleColor;
-    }
+    } // end WaveCircleColor()
 
+    // ---------------------------------------------------------------------------------
     // Using a proportional instead of pre-set values below
-    //This function returns the applicable size based on the wave maximum height
+    // This function returns the applicable size based on the wave maximum height
+    // ---------------------------------------------------------------------------------
     function waveCircleSize(height) {
         if (height > 0) {
             return (5000 * height);
@@ -281,7 +260,7 @@ function mapFunction(inputData) {
         else {
             return 0;
         }
-    }
+    } // end waveCircleSize()
 
 
     // Define array to hold created earthquake markers
@@ -339,13 +318,13 @@ function mapFunction(inputData) {
                 "<bTsunami Cause Code Description:</b> " + tsunamiCauseDescription(inputData[i]["Tsunami Cause Code"]) + "<br>"
             )
         )
-    }
+    } // end for
 
     // Create layer groups
     var earthquakeCircleGroupLayer = L.layerGroup(earthquakeCircleMarkers);
     var waterHeightandCauseGroupLayer = L.layerGroup(waterHeightandCauseMarkers);
 
-    //This section is for the fault lines information
+    // This section is for the fault lines information
     var fault_line_URL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
     d3.json(fault_line_URL, function (responseData) {
@@ -372,9 +351,9 @@ function mapFunction(inputData) {
     });
 
 
-
-
-
+    // ---------------------------------------------------------------------------------
+    // Function to build the map with layers
+    // ---------------------------------------------------------------------------------
     function createMap(waterHeightandCauseGroupLayer, earthquakeCircleGroupLayer, fault_lines) {
 
         // Define streetmap, darkmap layers
@@ -465,6 +444,6 @@ function mapFunction(inputData) {
         }
 
         legend.addTo(myMap);
-    }
+    } // end createMap()
 
-}
+} // end mapFunction()
