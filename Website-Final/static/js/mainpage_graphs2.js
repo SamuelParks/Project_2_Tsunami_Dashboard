@@ -1,5 +1,12 @@
+// ------------------------------------------------------------------
+// Graph the number of tsunamis by month, by cause code using 
+// a stacked bar graphs
+// ------------------------------------------------------------------
 function graphTsunamiCauseCodesByMonth(data) {
+    // Hardcode our x-axis to be the month numbers of the year
     var x_axis = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+    // Create arrays to hold the number of tsunamis found per each cause code
     var cause_cd_0 = [];
     var cause_cd_1 = [];
     var cause_cd_2 = [];
@@ -13,34 +20,24 @@ function graphTsunamiCauseCodesByMonth(data) {
     var cause_cd_10 = [];
     var cause_cd_11 = [];
     
-    // Loop for January
-    var counterCC0 = 0;
-    var counterCC1 = 0;
-    var counterCC2 = 0;
-    var counterCC3 = 0;
-    var counterCC4 = 0;
-    var counterCC5 = 0;
-    var counterCC6 = 0;
-    var counterCC7 = 0;
-    var counterCC8 = 0;
-    var counterCC9 = 0;
-    var counterCC10 = 0;
-    var counterCC11 = 0;
-  
     function countCodesPerMonth(month) {
-      counterCC0 = 0;
-      counterCC1 = 0;
-      counterCC2 = 0;
-      counterCC3 = 0;
-      counterCC4 = 0;
-      counterCC5 = 0;
-      counterCC6 = 0;
-      counterCC7 = 0;
-      counterCC8 = 0;
-      counterCC9 = 0;
-      counterCC10 = 0;
-      counterCC11 = 0;
+      // Generic counters used as the dataset is processed for the input month.
+      // At the end of the dataset for the input month, the values in these counters
+      // are added to their respective arrays
+      var counterCC0 = 0;
+      var counterCC1 = 0;
+      var counterCC2 = 0;
+      var counterCC3 = 0;
+      var counterCC4 = 0;
+      var counterCC5 = 0;
+      var counterCC6 = 0;
+      var counterCC7 = 0;
+      var counterCC8 = 0;
+      var counterCC9 = 0;
+      var counterCC10 = 0;
+      var counterCC11 = 0;
   
+      // 
       for(i = 0; i < data.length; i++) {
         if (data[i]["Mo"] == month) {
           switch (data[i]["Tsunami Cause Code"]) {
