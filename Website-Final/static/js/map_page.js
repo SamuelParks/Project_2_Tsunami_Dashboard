@@ -1,7 +1,6 @@
 // --------------------------------------------------------------------------------
 // Project 2: Tsunami Dashboard - Map Page
 // --------------------------------------------------------------------------------
-
 // URLs to our Flask routes
 var get_tsunami_status_URL    = "http://127.0.0.1:5000/get_tsunami_status";
 var update_tsunami_status_URL = "http://127.0.0.1:5000/update_tsunami_status";
@@ -72,7 +71,11 @@ fetch(get_tsunami_data_URL)
   }) // end fetch()
 .catch(error=>console.log(error));
 
-
+// ---------------------------------------------------------------------------------------
+// Function filterData() takes in an input tsuami dataset, and a Start and End year.
+// It will return a dataset filtered for records that include the Start and End year and
+// everything in between.
+// ---------------------------------------------------------------------------------------
 function filterData(data, startYear, endYear) {
   // Start with emptying filteredData
   var filteredData = [];
@@ -102,11 +105,3 @@ function filterData(data, startYear, endYear) {
 
   return filteredData;
 } // end function filterData()
-
-
-
-
-
-
-
-
