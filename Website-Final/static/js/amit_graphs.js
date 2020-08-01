@@ -1,4 +1,6 @@
+// ------------------------------------------------------------------
 // Graph the number of tsunamis by year using a line graph
+// ------------------------------------------------------------------
 function graphTsunamisByYear(data) {
   
   // Create an array that will hold the number of tsunamis for each year
@@ -75,8 +77,9 @@ function graphTsunamisByYear(data) {
   Plotly.newPlot('graphTsunamisByYear', data, layout);
 } // end function graphTsunamisByYear()
 
-
+// ------------------------------------------------------------------
 // Graph the number of tsunamis by month using a histogram
+// ------------------------------------------------------------------
 function graphTsunamisByMonth(data) {
 
   // Define an array to hold the month values of our dataset
@@ -113,6 +116,10 @@ function graphTsunamisByMonth(data) {
 } // end graphTsunamisByMonth()
 
 
+
+// ------------------------------------------------------------------
+// Graph the number of tsunamis by country using a histogram
+// ------------------------------------------------------------------
 function graphTsunamisByCountry(data) {
   var countryArray = [];
 
