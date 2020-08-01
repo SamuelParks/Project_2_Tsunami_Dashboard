@@ -1,8 +1,18 @@
+// Graph the number of tsunamis by year using a line graph
 function graphTsunamisByYear(data) {
+  
+  // Create an array that will hold the number of tsunamis for each year
   var yearTotals = [];
+
+  // counter is used within the for loop to count the number of tsunamis for the current
+  // year in question
   var counter = 0;
+
+  // currentYear is used within the for loop to determine if there is a change in years
+  // in the data being processed
   var currentYear = 0;
 
+  // Main for loop to count the number of tsunamis by year
   for(i = 0; i < data.length; i++) {
     if (i == 0) {
       // Initialize for first time
