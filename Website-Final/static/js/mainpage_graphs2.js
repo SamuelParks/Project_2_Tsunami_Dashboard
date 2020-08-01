@@ -20,6 +20,10 @@ function graphTsunamiCauseCodesByMonth(data) {
     var cause_cd_10 = [];
     var cause_cd_11 = [];
     
+    // ------------------------------------------------------------------------
+    // Function countCodesPerMonth() is used by graphTsunamiCauseCodesByMonth()
+    // for each month of the year
+    // ------------------------------------------------------------------------
     function countCodesPerMonth(month) {
       // Generic counters used as the dataset is processed for the input month.
       // At the end of the dataset for the input month, the values in these counters
@@ -37,7 +41,9 @@ function graphTsunamiCauseCodesByMonth(data) {
       var counterCC10 = 0;
       var counterCC11 = 0;
   
-      // 
+      // Main processing loop
+      // For each record that matches the input month, increment the appropriate counter
+      // matching the tsunami cause code
       for(i = 0; i < data.length; i++) {
         if (data[i]["Mo"] == month) {
           switch (data[i]["Tsunami Cause Code"]) {
@@ -77,9 +83,11 @@ function graphTsunamiCauseCodesByMonth(data) {
             case 11:
               counterCC11++;
               break;  
-          }
-        }
-      }
+          } // end switch
+        } // end if
+      } // end for
+
+      // Add values from each counter to their appropriate array
       cause_cd_0.push(counterCC0);
       cause_cd_1.push(counterCC1);
       cause_cd_2.push(counterCC2);
@@ -94,21 +102,12 @@ function graphTsunamiCauseCodesByMonth(data) {
       cause_cd_11.push(counterCC11);  
     } // end function countCodesPerMonth()
   
+    // Call the countCodesPerMonth() function for each month of the year
+    for(i = 1; i <= 12; i++) {
+      countCodesPerMonth(i);
+    } // end for
   
-    countCodesPerMonth(1);
-    countCodesPerMonth(2);
-    countCodesPerMonth(3);
-    countCodesPerMonth(4);
-    countCodesPerMonth(5);
-    countCodesPerMonth(6);
-    countCodesPerMonth(7);
-    countCodesPerMonth(8);
-    countCodesPerMonth(9);
-    countCodesPerMonth(10);
-    countCodesPerMonth(11);
-    countCodesPerMonth(12);
-  
-  
+    // Define the traces, data, and layout
     var trace1 = {
         x: x_axis,
         y: cause_cd_0,
@@ -193,8 +192,6 @@ function graphTsunamiCauseCodesByMonth(data) {
         type: 'bar'
       };
 
-
-
       var data = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8, trace9, trace10, trace11, trace12];
       
       var layout = {
@@ -206,14 +203,9 @@ function graphTsunamiCauseCodesByMonth(data) {
         yaxis: {title: "Tsunami Cause Code"},
         barmode: "relative",
         title: " Tsunami Cause Code vs Month"
-
         };
       
+      // Create the plot
       Plotly.newPlot('graphTsunamiCauseCodesByMonth', data, layout);
-  
-      
-  }
-  
 
-
-  
+} // end graphTsunamiCauseCodesByMonth()
