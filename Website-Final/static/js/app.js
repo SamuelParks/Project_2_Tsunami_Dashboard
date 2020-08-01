@@ -98,7 +98,9 @@ fetch(get_tsunami_data_URL)
   }) // end fetch()
 .catch(error=>console.log(error));
 
-
+// Function filterData() takes in an input tsuami dataset, and a Start and End year.
+// It will return a dataset filtered for records that include the Start and End year and
+// everything in between.
 function filterData(data, startYear, endYear) {
   // Start with emptying filteredData
   var filteredData = [];
