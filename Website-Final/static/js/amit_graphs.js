@@ -16,6 +16,8 @@ function graphTsunamisByYear(data) {
   for(i = 0; i < data.length; i++) {
     if (i == 0) {
       // Initialize for first time
+      // - set currentYear to the first year found in the data
+      // - only count records where the max water height > 0
       currentYear = data[i]["Year"];
       if (data[i]["Maximum Water Height (m)"] > 0) {
         counter += 1;
@@ -23,22 +25,29 @@ function graphTsunamisByYear(data) {
     } // end if
     else {  
       if (data[i]["Year"] == currentYear) {
+        // Current data record is for the current year being processed
         if (data[i]["Maximum Water Height (m)"] > 0) {
+          // Only increment counter if the max water height > 0
           counter += 1;
         }
         if (i == (data.length - 1)) {
+          // If we're at the last record, then update the yearTotals array
           yearTotals.push(counter);
         }
       }
       else {
         // Different year found
+        // - update the yearTotals array
+        // - reinitialize counter
+        // - update the currentYear 
         yearTotals.push(counter);
         counter = 0;
         currentYear = data[i]["Year"];
-      }
+      } // end else
     } // end else
   } // end for
   
+  // Hardcode in the x axis values to the years in our dataset
   x_axis = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 
             2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020];
 
