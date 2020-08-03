@@ -35,3 +35,15 @@ We are also web scraping the latest tsunami warning, advisory, watch, or threat 
     * get_tsunami_data: Retrieve the tsunami data from MongoDB
 * We used voila to host a Jupyter Notebook file to demonstrate another way of presenting the user with interactive plots
 
+## Screenshots
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Homepage1.png" alt="Home Page Part 1"/>
+
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Homepage2.png" alt="Home Page Part 2"/>
+
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Homepage3.png" alt="Home Page Part 3"/>
+
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Mappage1.png" alt="Map Page"/>
+
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Datapage1.png" alt="Data Page"/>
+
+<img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Aboutpage1.png" alt="About Page"/>
