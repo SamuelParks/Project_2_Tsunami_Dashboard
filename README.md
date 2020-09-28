@@ -47,3 +47,4 @@ We are also web scraping the latest tsunami warning, advisory, watch, or threat 
 <img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Datapage1.png" alt="Data Page"/>
 
 <img src="https://github.com/gtslee/Project_2_Tsunami_Dashboard/blob/master/Website-Screenshots/Aboutpage1.png" alt="About Page"/>
+
