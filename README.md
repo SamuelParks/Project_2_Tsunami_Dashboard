@@ -6,7 +6,7 @@ We are interested in developing a dashboard to visualize tsunami data for events
 
 
 ## Data Sources
-Tsunami data is available on the Na/onal Oceanic and Atmospheric Administra/on (NOAA) website: https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/runup-search/
+Tsunami data is available on the National Oceanic and Atmospheric Administration (NOAA) website: https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/runup-search/
 
 We are also web scraping the latest tsunami warning, advisory, watch, or threat headline from https://www.tsunami.gov/
 
